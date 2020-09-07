@@ -1,5 +1,6 @@
 import graphene
 from .queries.me import MeQuery
+from .mutations.json_web_token import ObtainJSONWebToken
 
 
 class Query(MeQuery):
@@ -7,4 +8,4 @@ class Query(MeQuery):
 
 
 class Mutation(graphene.ObjectType):
-    pass
+    auth = ObtainJSONWebToken.Field()
